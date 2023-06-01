@@ -6,7 +6,7 @@ if number < 0:
     last_dig = last_dig * -1
 if last_dig > 5:
     print(f"Last digit of {number} is {last_dig} and is greater than 5")
-elif last_digit < 6 and last_digit != 0:
+elif last_dig < 6 and last_dig != 0:
     print(f"Last digit of {number} is {last_dig} and is less than 6 and not 0")
-elif last_digit == 0:
+elif last_dig == 0:
     print(f"Last digit of {number} is {last_dig} and is 0")
