@@ -18,6 +18,7 @@ class Square:
 
     @property
     def size(self):
+        """se inicializa size"""
         return self.__size
 
     @size.setter
