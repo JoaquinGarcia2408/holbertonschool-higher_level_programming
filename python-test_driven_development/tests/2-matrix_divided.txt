@@ -22,7 +22,3 @@ ZeroDivisionError: division by zero
 >>> matrix_divided([[4],[4]], )
 Traceback (most recent call last):
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
-
->>> matrix_divided( , 2)
-Traceback (most recent call last):
-IndexError: list index out of range
