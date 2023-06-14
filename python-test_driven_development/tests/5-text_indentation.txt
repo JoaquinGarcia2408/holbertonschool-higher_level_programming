@@ -18,3 +18,7 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 >>> text_indentation(5)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+>>> text_indentation("test", "text")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 2 were given
