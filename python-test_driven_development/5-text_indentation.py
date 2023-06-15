@@ -2,7 +2,6 @@
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-
     space_check = False
     for i in range(len(text)):
         if text[i] in {".", "?", ":"}:
