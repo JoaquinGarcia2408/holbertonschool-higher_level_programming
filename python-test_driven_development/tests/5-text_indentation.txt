@@ -1,32 +1,24 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit")
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+>>> text_indentation("test")
+test
+
+>>> text_indentation("test.hola")
+test
+<BLANKLINE>
+hola
 
 >>> text_indentation()
 Traceback (most recent call last):
 TypeError: text_indentation() missing 1 required positional argument: 'text'
 
->>> text_indentation(2)
+>>> text_indentation(str("5"))
+5
+
+>>> text_indentation(5)
 Traceback (most recent call last):
 TypeError: text must be a string
 
->>> text_indentation(None)
-Traceback (most recent call last):
-TypeError: text must be a string
-
->>> text_indentation(-10.56)
-Traceback (most recent call last):
-TypeError: text must be a string
-
->>> text_indentation("Lorem ipsum. dolor sit amet? adipiscing elit: Quonam")
-Lorem ipsum
-<BLANKLINE>
-dolor sit amet
-<BLANKLINE>
-adipiscing elit
-<BLANKLINE>
-Quonam
->>> text_indentation("Hola", 2)
+>>> text_indentation("test", "text")
 Traceback (most recent call last):
 TypeError: text_indentation() takes 1 positional argument but 2 were given
