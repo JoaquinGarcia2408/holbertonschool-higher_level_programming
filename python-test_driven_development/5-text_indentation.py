@@ -2,10 +2,16 @@
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    result = " "
+
+    space_check = False
     for i in range(len(text)):
-        if text[i] == "." or text[i] == "?" or text[i] == ":":
-            result += text[i] + "\n\n"
+        if text[i] in {".", "?", ":"}:
+            print()
+            print()
+            space_check = True
+        if space_check:
+            if i < len(text) - 1 and text[i + 1] == " ":
+                continue
+            space_check = False
         else:
-            result += text[i]
-    print(result.strip())
+            print(text[i], end="")
