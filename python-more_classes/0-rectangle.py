@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+"Task 0 of more_classes"
 
-"task 0"
 
 class Rectangle():
     "Defines a rectangle"
