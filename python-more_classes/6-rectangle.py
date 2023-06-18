@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"Task 5 of more_classes"
+"Task 6 of more_classes"
 
 
 class Rectangle():
     "Defines a rectangle (based on 0-rectangle.py)"
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         "Instantiation"
         if type(width) is not int:
@@ -16,6 +18,7 @@ class Rectangle():
             raise ValueError("height must be >= 0")
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -72,4 +75,5 @@ class Rectangle():
         return f'Rectangle({self.__width}, {self.__height})'
 
     def __del__(self):
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
