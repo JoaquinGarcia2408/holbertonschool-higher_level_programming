@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"Task 3 of more_classes"
+"Task 4 of more_classes"
 
 
 class Rectangle():
@@ -19,7 +19,7 @@ class Rectangle():
 
     @property
     def width(self):
-        "Getter of the width"   
+        "Getter of the width"
         return self.__width
 
     @property
@@ -46,25 +46,26 @@ class Rectangle():
         self.__width = value
 
     def area(self):
-        "Getter of the area"
+        "Returns the rectangle area"
         return self.__height * self.__width
 
     def perimeter(self):
         "Returns the rectangle perimeter"
-        if self.__height == 0 or self.__width == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return (self.__height * 2) + (self.__width * 2)
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
+        "String representation of the rectangle"
         if self.__height == 0 or self.__width == 0:
             return ""
-        rect = ""
+        nString = ""
         for i in range(self.__height):
             for j in range(self.__width):
-                rect += "#"
+                nString += "#"
             if i < (self.__height) - 1:
-                rect += "\n"
-        return rect
+                nString += "\n"
+        return nString
 
     def __repr__(self):
         "Representation of the rectangle"
