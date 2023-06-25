@@ -3,8 +3,8 @@
 import json
 
 
-def cargar_desde_archivo_json(nombre_archivo):
+def load_from_json_file(filename):
     "creates an Object from a “JSON file”"
-    with open(nombre_archivo, 'r') as archivo:
+    with open(filename, 'r') as archivo:
         obj = json.load(archivo)
     return obj
