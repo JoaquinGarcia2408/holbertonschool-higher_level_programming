@@ -90,3 +90,10 @@ class Rectangle(Base):
     def area(self):
         "public method, returns the area value "
         return(self.__height * self.__width)
+
+    def display(self):
+        "that prints in stdout the Rectangle"
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end="")
+            print()
