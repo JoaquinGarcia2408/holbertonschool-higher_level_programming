@@ -4,10 +4,11 @@ import json
 
 
 class Base():
-    "clase base"
+    """ Base Class """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        "Instantiation"
         if id is not None:
             self.id = id
         else:
@@ -16,7 +17,23 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        "returns the JSON string representation of list_dictionaries"
+        "Returns the JSON representation of list_dictionaries"
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        "Writes the JSON str repr of list_objs to a file"
+        file_to_write = f"{cls.__name__}.json"
+        to_dict_list = []
+        if not list_objs:
+            pass
+        else:
+            for x in range(len(list_objs)):
+                to_dict_list.append(list_objs[x].to_dictionary())
+
+        to_write = cls.to_json_string(to_dict_list)
+
+        with open(file_to_write, 'w') as file:
+            file.write(to_write)
