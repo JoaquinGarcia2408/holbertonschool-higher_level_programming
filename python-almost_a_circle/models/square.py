@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     "class Square that inherits from Rectangle"
+    
     def __init__(self, size, x=0, y=0, id=None):
         "Class constructor"
         super().__init__(size, size, x, y, id)
@@ -24,7 +25,7 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-def update(self, *args, **kwargs):
+    def update(self, *args, **kwargs):
         "Assigns an argument to each attribute"
         if args and len(args) != 0:
             if len(args) >= 1:
@@ -38,3 +39,14 @@ def update(self, *args, **kwargs):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        "Placeholder"
+        return (
+            {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+            }
+        )
