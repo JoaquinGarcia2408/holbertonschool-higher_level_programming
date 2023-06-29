@@ -89,7 +89,7 @@ class Rectangle(Base):
 
     def area(self):
         "public method, returns the area value "
-        return(self.__height * self.__width)
+        return (self.__height * self.__width)
 
     def display(self):
         "that prints in stdout the Rectangle"
@@ -104,8 +104,10 @@ class Rectangle(Base):
 
     def __str__(self):
         "overriding the __str__ method"
-        return(f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
-               f" - {self.__width}/{self.__height}")
+        return (
+            f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
+            f" - {self.__width}/{self.__height}"
+        )
 
     def update(self, *args, **kwargs):
         "Assigns an argument to each attribute"
