@@ -39,8 +39,8 @@ class Test_init(unittest.TestCase):
         self.assertEqual(rect.width, 2)
 
     def test_height_getter(self):
-        rect = Rectangle(2, 2)
-        self.assertEqual(rect.height, 2)
+        rect = Rectangle(2, 3)
+        self.assertEqual(rect.height, 3)
 
     def test_x_getter(self):
         rect = Rectangle(2, 2, 4)
@@ -101,3 +101,39 @@ class test_input_validation(unittest.TestCase):
     def test_y_under0(self):
         with self.assertRaises(ValueError):
             rect = Rectangle(1, 2, 3, -1)
+
+
+class test_area(unittest.TestCase):
+    "Cases suite for area method of Rectangle"
+
+    def test_base(self):
+        rect = Rectangle(10, 10)
+        self.assertEqual(rect.area(), 100)
+
+    def test_one_arg(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2).area(42)
+
+    def test_str_with_arg(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, 4).display(2)
+
+
+class test_update(unittest.TestCase):
+    "Test cases for update"
+
+    def test_base_update(self):
+        r = Rectangle(1, 2, 3, 4)
+        r.update(10, 20, 30, 40)
+        self.assertEqual(r.id, 10)
+        self.assertEqual(r.width, 20)
+        self.assertEqual(r.height, 30)
+
+    def test_kw_update(self):
+        r = Rectangle(1, 1)
+        r.update(id=11, height=12, width=13, y=9, x=15)
+        self.assertEqual(r.id, 11)
+        self.assertEqual(r.height, 12)
+        self.assertEqual(r.width, 13)
+        self.assertEqual(r.y, 9)
+        self.assertEqual(r.x, 15)

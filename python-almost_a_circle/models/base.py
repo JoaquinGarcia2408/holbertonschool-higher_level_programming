@@ -57,12 +57,16 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
-        filename = cls.__name__ + ".json"
-
-        try:
-            with open(filename, "r") as file:
-                json_string = file.read()
-                obj_list = cls.from_json_string(json_string)
-                return [cls.create(**obj_dict) for obj_dict in obj_list]
-        except FileNotFoundError:
+        "Returns a list of instances"
+        file_to_load = "{}.json".format(cls.__name__)
+        loaded_list = []
+        if not os.path.isfile(file_to_load):
             return []
+        with open(file_to_load, 'r') as f:
+            json_readed = f.read()
+
+        json_list = cls.from_json_string(json_readed)
+
+        for i in range(len(json_list)):
+            loaded_list.append(cls.create(**json_list[i]))
+        return loaded_list
