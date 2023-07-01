@@ -47,6 +47,26 @@ class Test_init(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(10).size = 0
 
+    def test_size_notInt(self):
+        with self.assertRaises(TypeError):
+            Square("10")
+
+    def test_x_notInt(self):
+        with self.assertRaises(TypeError):
+            Square(10, "hola")
+
+    def test_y_notInt(self):
+        with self.assertRaises(TypeError):
+            Square(10, 2, "Holis")
+
+    def test_x_under0(self):
+        with self.assertRaises(ValueError):
+            Square(10, -1)
+
+    def test_y_under0(self):
+        with self.assertRaises(ValueError):
+            Square(10, 2, -2)
+
 
 class tests_update(unittest.TestCase):
     "Tests cases for update square"
