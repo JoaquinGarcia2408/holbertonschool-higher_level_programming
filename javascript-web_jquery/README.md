@@ -1,0 +1,1 @@
+<title>JavaScript - Web jQuery</title>
